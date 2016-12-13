@@ -1,0 +1,56 @@
+/* CSS Document */
+
+.img 
+	{
+		display:block;
+		float:left;
+		padding:1px 10px 10px 1px;
+		
+	}
+
+.heading
+{
+	color:#000000;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align:center;
+	padding:10px 10px;
+	
+	
+}
+a h3:hover
+{
+	background-color:#EBEBEB;
+	text-decoration:none;
+}
+a div:hover
+{
+	text-decoration:none;
+	background-color:#EBEBEB;
+}
+.img-medium
+{
+	width:400px;
+	height:400px;
+}
+.grey
+{
+	background-color:#EBEBEB;
+}
+a
+{
+	text-decoration:none;
+}
+.icon
+{
+	height:50px;
+	text-decoration:overline;
+}
+.menu
+{
+	font-size:20px;
+}
+.price
+{
+	color:#E90003;
+	font-size:18px;
+}
