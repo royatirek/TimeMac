@@ -116,7 +116,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                 
                 <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
                 <br>
-                <button type="button" class="btn-default">SHARE</button>
+                <button type="button" class="btn-lg btn-default">SHARE</button>
                 
                 <!--code for next button-->
                 <?php 
@@ -138,7 +138,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
 
                 <a href="media.php?img=<?php echo($images[$rand_image]);?>">
                 
-                <button type="button" class="btn-success">NEXT</button>
+                <button type="button" class="btn-lg btn-success">NEXT</button>
                 </a>
             </div>
         </section>
