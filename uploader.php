@@ -129,7 +129,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
     $(document).ready(function() { 
         var options = { 
                 target:   '#output',   // target element(s) to be updated with server response 
-                beforeSubmit:  beforeSubmit,  // pre-submit callback 
+                //beforeSubmit:  beforeSubmit,  // pre-submit callback 
                 success:       afterSuccess,  // post-submit callback 
                 resetForm: true        // reset the form after successful submit 
             }; 
