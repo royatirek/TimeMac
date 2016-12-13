@@ -148,10 +148,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                         $images=preg_grep('/\.(jpg|jpeg|png|gif)(?:[\?\#].*)?$/i', $files);
                         $images=preg_grep('/\.gif/i', $files); 
                         $images = array_splice($images,0,2);
-                        print_r($images);
-                        echo "<br/>";
                         $rand_image = array_rand($images);
-                        echo $rand_image;
                 ?>
 
                 <a href="media.php?img=<?php echo($images[$rand_image]);?>"><button>Next</button></a>
