@@ -147,7 +147,11 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                         }
                         $images=preg_grep('/\.(jpg|jpeg|png|gif)(?:[\?\#].*)?$/i', $files);
                         $images=preg_grep('/\.gif/i', $files); 
+<<<<<<< HEAD
                         $images = array_splice($images,0);
+=======
+                        $images = array_splice($images,0,2);
+>>>>>>> c36eef9fb4d7bbcc223c6602993f1196c7701806
                         $rand_image = array_rand($images);
                 ?>
 
