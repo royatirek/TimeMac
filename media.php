@@ -40,23 +40,20 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
 <!DOCTYPE html>
 <html lang="">
 <head>
+ <title>TimeMac Originals</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="$NewImageFull">
-    <meta name="author" content="$NewImageFull">
-    <link rel="icon" href="assets/img/favicon.ico">
-    
-    <title>TimeMac Originals</title>
-    <meta name="
-	<meta name="Author" content="TimeMac Originals"/>
-	<meta name="Website" content="http://triginals.com"/>
-    <meta property="og:image" content="" />      
-    <meta property="og:url" content="" />
+ 
+        <meta property="og:url" content="<?php echo'http://triginals.com/'.($NewImage);?>" /> 
+        <meta property="og:image" content="<?php echo'http://triginals.com/'.($NewImage);?>"/>  
+        <meta property="og:image:width" content="640" /> 
+        <meta property="og:image:height" content="442" />
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
-<body>   
+<body>  
+
    <div class="main">
       
         <header>
@@ -116,9 +113,11 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                 
                 <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
                 <br>
-                <button type="button" class="btn-lg btn-default">SHARE</button>
                 
-                <!--code for next button-->
+                <a  type="button" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo($NewPageFull)?>" ><button class="btn-lg btn-default">SHARE</button></a>
+                
+                
+                <!--code for next button started-->
                 <?php 
                     $dir = "media/gifs/";
                     
@@ -153,7 +152,6 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                 
                 
                 <br>
-                <br>
                 </div>
                 
                 <div class="input-group input-group-md col-xs-12 col-md-6 col-md-offset-3">                 
@@ -176,33 +174,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                       <a href="<?php echo($NewImage);?>" download="<?php echo($NewImageName);?>">Download</a></span>
                       <input type="text" class="form-control" placeholder="http://" aria-describedby="kis-download" value="<?php echo($NewImageFull);?>">
                 </div>
-             <?php 
-                    $dir = "media/gifs/";
-                    
-                    // Open a directory, and read its contents
-                    if (is_dir($dir)){
-                      if ($dh = opendir($dir)){
-                        while ((($file = readdir($dh)) !== false)) {
-                            $files[] = $file;
-                        }
-                        $images=preg_grep('/\.(jpg|jpeg|png|gif)(?:[\?\#].*)?$/i', $files);
-                        $images=preg_grep('/\.gif/i', $files); 
-
-                        $images = array_splice($images,0);
-
-                        $rand_image = array_rand($images);
-                ?>
-
-                <a href="media.php?img=<?php echo($images[$rand_image]);?>"></a>
-            </div>
-        </section>
-    </div>
-    <?php
-                
-                        closedir($dh);
-                      }
-                  }
-                ?>
+            
     
     <div class="container-fluid"> 
         <div class="row">

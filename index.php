@@ -22,12 +22,12 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="assets/img/favicon.ico">
+    <meta name="description" content="A GIF sharing site with lot of cool and funny GIFs.">
+    
+    <!--<link rel="icon" href="assets/img/favicon.ico">-->
     
     <title>TimeMac Originals</title>
-	<meta name="Author" content="TimeMac Originals"/>
+	
 	<meta name="Website" content="http://triginals.com"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
@@ -79,9 +79,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                         }
                         
                         $images=preg_grep('/\.(jpg|jpeg|png|gif)(?:[\?\#].*)?$/i', $files);
-						
                         $images=preg_grep('/\.gif/i', $files);
-						shuffle($images);
                             foreach($images as $image) {
                 ?>
                           <div class="grid-item">
@@ -98,7 +96,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
             
         </section>
     </div>
-    
+    <hr>
         <div class="container-fluid"> 
         <div class="row">
               <a href="https://www.facebook.com/triginals" target="_blank"><img style="display:block;float:left;padding:1px 10px 10px 1px;" class="img-responsive" src="media/img/facebook.png" width="70" height="70" alt="facebook" /></a>
