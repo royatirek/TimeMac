@@ -136,9 +136,34 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                       <a href="<?php echo($NewImage);?>" download="<?php echo($NewImageName);?>">Download</a></span>
                       <input type="text" class="form-control" placeholder="http://" aria-describedby="kis-download" value="<?php echo($NewImageFull);?>">
                 </div>
+             <?php 
+                    $dir = "media/gifs/";
+                    
+                    // Open a directory, and read its contents
+                    if (is_dir($dir)){
+                      if ($dh = opendir($dir)){
+                        while ((($file = readdir($dh)) !== false)) {
+                            $files[] = $file;
+                        }
+                        $images=preg_grep('/\.(jpg|jpeg|png|gif)(?:[\?\#].*)?$/i', $files);
+                        $images=preg_grep('/\.gif/i', $files); 
+                        $images = array_splice($images,0,2);
+                        print_r($images);
+                        echo "<br/>";
+                        $rand_image = array_rand($images);
+                        echo $rand_image;
+                ?>
+
+                <a href="media.php?img=<?php echo($images[$rand_image]);?>"><button>Next</button></a>
             </div>
         </section>
     </div>
+    <?php
+                
+                        closedir($dh);
+                      }
+                  }
+                ?>
     
     <div class="container-fluid"> 
         <div class="row">
