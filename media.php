@@ -86,7 +86,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
        
         <section id="primary-slider">
             <div class="container">
-                <h1 class="page-title text-center">TimeMac Originals</h1>
+            <!--Commented the h1 tag name -->
+                <!--<h1 class="page-title text-center">TimeMac Originals</h1>-->
                 <!--<img class="media col-xs-12 col-md-6 col-md-offset-3" src="media/gifs/filler.gif">-->
             </div>
         </section>
@@ -114,7 +115,46 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                 <?php } ?>
                 
                 <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-                <small>Image preview in Facebook and Twitter. </small></div>
+                <br>
+                <button type="button" class="btn-default">SHARE</button>
+                
+                <!--code for next button-->
+                <?php 
+                    $dir = "media/gifs/";
+                    
+                    // Open a directory, and read its contents
+                    if (is_dir($dir)){
+                      if ($dh = opendir($dir)){
+                        while ((($file = readdir($dh)) !== false)) {
+                            $files[] = $file;
+                        }
+                        $images=preg_grep('/\.(jpg|jpeg|png|gif)(?:[\?\#].*)?$/i', $files);
+                        $images=preg_grep('/\.gif/i', $files); 
+
+                        $images = array_splice($images,0);
+
+                        $rand_image = array_rand($images);
+                ?>
+
+                <a href="media.php?img=<?php echo($images[$rand_image]);?>">
+                
+                <button type="button" class="btn-success">NEXT</button>
+                </a>
+            </div>
+        </section>
+    </div>
+    <?php
+                
+                        closedir($dh);
+                      }
+                  }
+                ?>
+                <!--code for next button ended-->
+                
+                
+                <br>
+                <br>
+                </div>
                 
                 <div class="input-group input-group-md col-xs-12 col-md-6 col-md-offset-3">                 
                   <span class="input-group-addon" id="kis-image">
@@ -153,7 +193,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
                         $rand_image = array_rand($images);
                 ?>
 
-                <a href="media.php?img=<?php echo($images[$rand_image]);?>"><button>Next</button></a>
+                <a href="media.php?img=<?php echo($images[$rand_image]);?>"></a>
             </div>
         </section>
     </div>
