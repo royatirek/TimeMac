@@ -46,8 +46,8 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true ) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
  
-        <meta property="og:url" content="<?php echo'http://triginals.com/'.($NewImage);?>" /> 
-        <meta property="og:image" content="<?php echo'http://triginals.com/'.($NewImage);?>"/>  
+        <meta property="og:url" content="<?php echo($DomainName.$NewPage);?>" /> 
+        <meta property="og:image" content="<?php echo($DomainName.$NewPage);?>"/>  
         <meta property="og:image:width" content="640" /> 
         <meta property="og:image:height" content="442" />
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
